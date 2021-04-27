@@ -198,7 +198,7 @@ button {
   position: relative;
 
   &__background {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    background: 
       url("./images/homebackground.png") no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -318,9 +318,9 @@ button {
   }
 
   &__price {
-    font-size: 5rem;
+    font-size: 7rem;
     color: $colorEffect;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
   }
 
   &__list-element {
@@ -330,7 +330,7 @@ button {
 
   &__list,
   &__minutes {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
   }
 
   &__suivi {

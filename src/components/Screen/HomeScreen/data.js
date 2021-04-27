@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    img: "images/kine-osteopathe.webp",
+    img: "images/kine-osteopathe.jpg",
     heading: "Massothérapie",
     description:
       "Le massothérapeute pratique le massage suédois : technique dynamique qui consiste en un enchaînement de manœuvres exécutées principalement sur la musculature et les articulations.",
@@ -9,7 +9,7 @@ const data = [
   },
   {
     id: 2,
-    img: "images/woman-sports.webp",
+    img: "images/woman-sports.jpg",
     alt: "photo massage",
     heading: "Kinésiologie",
     description:
@@ -18,7 +18,7 @@ const data = [
   },
   {
     id: 3,
-    img: "images/massage1.webp",
+    img: "images/massage1.jpg",
     heading: "Massage Sportif",
     description:
       "C'est l'ensemble de techniques de massage spécifiques à un athlète. L’objectif est d'améliorer sa préparation et/ou sa récupération due aux exigence physiques de l'entraînement ou de la compétition.",
