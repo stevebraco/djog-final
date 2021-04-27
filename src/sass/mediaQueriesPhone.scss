@@ -6,6 +6,7 @@
     max-width: calc(100% - 2rem);
     margin: 0 auto;
   }
+  
   .wrapper-btn {
     display: none;
   }
@@ -36,6 +37,11 @@
 
   .myservices-card__container {
     flex: 100%;
+    padding-bottom: 1rem;
+}
+
+.wrapper-heading__text {
+    font-size: 1.7rem;
 }
 
 .wrapper-takeadate__strong {

@@ -18,7 +18,7 @@ h1 {
 h2 {
   font-size: 5rem;
   color: $secondary;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h3 {
@@ -28,6 +28,9 @@ h3 {
 }
 h4 {
   font-size: 3rem;
+} 
+strong {
+  font-weight: 400;
 }
 
 p {
@@ -128,8 +131,11 @@ button {
   }
 
   &__text {
-    font-size: 1.9rem;
+    font-size: 2.5rem;
     line-height: 2.9rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    font-weight: 300;
   }
 }
 
@@ -228,6 +234,7 @@ button {
 
   &__img {
     object-fit: cover;
+
   }
 
   &__heading {

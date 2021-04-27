@@ -13,6 +13,14 @@
   .contact__strong {
     font-size: 5rem;
   }
+
+  .section {
+    padding: 6rem 0 3rem;
+  }
+
+  .header {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .7);
+  }
   
   
   img {
@@ -101,12 +109,17 @@
 
     }
   }
-
+  .wrapper-heading__title::after {
+    top: 30px;
+  }
   .wrapper-takeadate__container{
     max-width: 70rem;
   }
   .wrapper-takeadate__strong {
     font-size: 4rem;
+  }
+  .wrapper-heading__text {
+    font-size: 2rem;
   }
 
   .myservices-card__container {
