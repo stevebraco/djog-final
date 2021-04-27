@@ -1,0 +1,498 @@
+@import "./sass/reset.scss";
+@import "./sass/variable.scss";
+
+body {
+  font-family: $fonts;
+  font-size: 1.8rem;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 5rem;
+  color: $secondary;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  color: $secondary;
+  font-weight: 500;
+}
+h4 {
+  font-size: 3rem;
+}
+
+p {
+  color: $textColor;
+}
+
+button {
+  border: 0;
+  background: $primary;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+  margin-top: 1rem;
+  transition: .5s;
+  border-radius: .5rem;
+
+  &:hover {
+    background: $colorEffect;
+  }
+}
+
+.container {
+  max-width: calc(100% - 5rem);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 8rem 0 5rem;
+}
+
+//ScrollToTop
+.scroll-top {
+  position: fixed;
+  bottom: -100%;
+  right: 1%;
+  z-index: 1;
+  transition: 1s;
+  font-size: 2.5rem;
+  color: $white;
+  background: $primary;
+  padding: 0.5rem 0.3rem 0rem;
+  border-radius: 0.5rem;
+
+  &.active {
+    bottom: 2%;
+  }
+}
+
+// *** FLEXBOX ***
+.dp-flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.align-c {
+  align-items: center;
+}
+
+// *** BUTTON RESERVER ***
+.btn-takeadate {
+  display: inline-block;
+  padding: 2rem 2.5rem;
+  font-size: 1.6rem;
+  background: $primary;
+  border-radius: 0.5rem;
+  color: $white;
+  transition: 0.5s;
+
+  &:hover {
+    background: $secondary;
+  }
+}
+
+// *** Wrapper ***
+.wrapper-heading {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rem;
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      border-radius: 0.3rem;
+      top: 41px;
+      z-index: -1;
+      padding: 0.6rem;
+      background: $colorEffect;
+    }
+  }
+
+  &__text {
+    font-size: 1.9rem;
+    line-height: 2.9rem;
+  }
+}
+
+.wrapper-takeadate {
+  background: $background;
+  color: $secondary;
+
+  &__container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  &__strong {
+    font-size: 5rem;
+    padding-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+}
+
+.wrapper-social {
+  font-size: 2.5rem;
+
+  &__icon-footer {
+    color: $white;
+    margin: 0 1rem;
+    transition: 0.5s;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  &__icon-info {
+    color: $primary;
+    margin: 0 1rem;
+    transition: 0.5s;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+// *** NAVBAR ***
+.navbar {
+  font-size: $fontNav;
+  height: 10rem;
+
+  &__link {
+    color: $secondary;
+    margin: 0 2rem;
+    letter-spacing: 0.5px;
+    transition: 0.5s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__icon {
+    display: none;
+  }
+}
+
+// *** HOME SCREEN ***
+.home {
+  position: relative;
+
+  &__background {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("./images/homebackground.png") no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    padding-left: 5rem;
+    min-height: 86vh;
+  }
+  &__heading {
+    padding: 14rem 0;
+  }
+
+  &__title {
+    max-width: 60rem;
+    color: $white;
+    padding-bottom: 2rem;
+  }
+  &__text {
+    display: block;
+  }
+}
+
+// * MYSERVICESCARD *
+.myservices-card {
+  &__container {
+    flex: 1 1;
+    
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__heading {
+    padding-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    line-height: 2.3rem;
+    font-weight: 300;
+  }
+
+  &__link {
+    color: $secondary;
+    &:hover .myservices-card__arrow {
+      transform: translateX(5px);
+    }
+  }
+
+  &__arrow {
+    transition: 0.5s;
+    vertical-align: middle;
+  }
+}
+
+//*** SERVICES SCREEN ***
+.services {
+  &__heading {
+    font-size: 3rem;
+    text-align: center;
+    flex-basis: 100%;
+    padding-bottom: 2rem;
+  }
+
+  &__container {
+    margin-bottom: 2rem;
+  }
+  &__loading {
+    background: $primary;
+    color: $white;
+    padding: 3rem;
+  }
+}
+.masso-one {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("./images/massotherapie.jpg") no-repeat;
+}
+.masso-two {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("./images/massotherapie2.jpg") no-repeat;
+}
+.kine-one {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("./images/kinesiologie.jpg") no-repeat;
+}
+.kine-two {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("./images/kinesiologie3.jpg") no-repeat;
+}
+.kine-three {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("./images/kinesiologie2.jpg") no-repeat;
+}
+.icon-check {
+  color: $colorEffect;
+  font-size: 3rem;
+  vertical-align: middle;
+}
+.pricing {
+  display: flex;
+  flex-flow: column;
+  flex: 1 1;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 1rem;
+  color: $white;
+  transition: 0.5s;
+  background-size: cover;
+  background-position: center;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__heading {
+    padding-bottom: 2rem;
+  }
+
+  &__price {
+    font-size: 5rem;
+    color: $colorEffect;
+    padding-bottom: 2rem;
+  }
+
+  &__list-element {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  &__list,
+  &__minutes {
+    padding-bottom: 1rem;
+  }
+
+  &__suivi {
+    color: $colorEffect;
+    font-size: 3rem;
+  }
+}
+
+//*** ABOUT ME ***
+.about {
+
+  &__profil {
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+  }
+
+  &__img {
+    border-radius: 100%;
+  }
+
+  &__list-item {
+    padding-bottom: 1rem;
+    color: $secondary;
+    font-weight: 500;
+  }
+
+  &__container-description {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  &__link {
+    color: $primary;
+    border-bottom: 1px solid $primary;
+    transition: 0.5s;
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__strong {
+    color: $textColor;
+    font-weight: 500;
+  }
+}
+
+//*** CONTACT ***
+.contact {
+  padding-bottom: 0;
+  &__info {
+    width: 45%;
+    text-align: center;
+  }
+
+  &__wrapper {
+    padding: 3rem;
+  }
+
+  &__strong {
+    color: #515151;
+    font-size: 6rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+ 
+  &__email-phone {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primary;
+    line-height: 3rem;
+  }
+
+  &__link {
+    color: $primary;
+    margin-left: 1rem;
+  }
+}
+.contact__container {
+  background: $background;
+  padding: 8rem 0;
+
+}
+iframe {
+  width: 100%;
+  height: 300px;
+}
+input {
+  margin-bottom: 2rem;
+}
+input, textarea {
+  border: none;
+  border: 0.2rem #dfe0e2 solid;
+  border-radius: 3px;
+  width: 100%;
+  outline: none;
+  padding: 1rem 0 0.8rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+textarea {
+  resize: none;
+  height: 200px;
+}
+//Form
+.form {
+  width: 50%;
+  margin: 0 auto;
+
+  &__wrapper {
+    justify-content: space-between;
+  }
+
+  &__lil-input {
+    width: 49%;
+  }
+
+  &__field, &__field-email {
+    display: none;
+    font-style: italic;
+    color: #f54242;
+    text-align: left;
+  }
+
+  &__field.error, &__field-email.error {
+    display: block;
+  }
+}
+
+// *** FOOTER ***
+.footer {
+  text-align: center;
+  background: url("./images/footer.jpg") no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 3rem;
+
+  &__address {
+    padding-top: 2rem;
+  }
+
+  &__country {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &__logo {
+    max-width: 25rem;
+  }
+}
+
+.wrapper-social {
+  padding-top: 2rem;
+
+  &__icon {
+    background: $primary;
+  }
+}
+
+@import "./sass/mediaQueriesTablet.scss";
+@import "./sass/mediaQueriesPhone.scss";

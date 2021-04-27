@@ -1,0 +1,51 @@
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .container {
+    max-width: calc(100% - 2rem);
+    margin: 0 auto;
+  }
+  .wrapper-btn {
+    display: none;
+  }
+
+  .home__background {
+    position: relative;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+      url("../images/homebackground-phone.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 0;
+  }
+  .home__heading {
+    padding: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .home__title {
+      max-width: 100%;
+      padding-bottom: 4rem;
+}
+
+  .myservices-card__container {
+    flex: 100%;
+}
+
+.wrapper-takeadate__strong {
+    font-size: 2rem;
+}
+
+.contact__container {
+    flex-direction: column;
+}
+.contact__info, .form {
+    width: 95%;
+}
+}

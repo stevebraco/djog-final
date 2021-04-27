@@ -1,0 +1,123 @@
+@media screen and (max-width: 980px) {
+  html {
+    scroll-behavior: initial;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+
+  .contact__strong {
+    font-size: 5rem;
+  }
+  
+  
+  img {
+    width: 100%;
+  }
+  body {
+    font-size: 1.6rem;
+  }
+
+  .home__background {
+    padding-top: 15rem;
+  }
+
+  .services, .about, .contact {
+    padding-top: 13rem;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    top: 0;
+    display: block;
+    z-index: 1;
+  }
+
+  .navbar {
+    background: $white;
+    &__icon {
+      position: absolute;
+      right: 50px;
+      display: block;
+      color: $primary;
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    &__link {
+      margin: 0;
+      padding: 3rem;
+      color: $textColor;
+      transition: initial;
+
+      &:hover {
+        background: $primary;
+        color: whitesmoke;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      z-index: 1;
+      position: absolute;
+      top: 10rem;
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: 0.5s;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      max-height: 0vh;
+      transform: scaleY(0);
+      transition: max-height 0.3s, transform 0.3s, -webkit-transform 0.3s;
+      transform-origin: top;
+      overflow: auto;
+    }
+  }
+  .btn-takeadate {
+      font-size: 1.4rem;
+      padding: 2rem 2.5rem;
+  }
+  //SHOW MENU
+  .show-menu {
+    transform: scaleY(1);
+    max-height: 100vh;
+    padding-bottom: 1rem;
+
+  }
+
+  .pricing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    &__minutes, &__suivi {
+      padding-bottom: 3rem;
+
+    }
+  }
+
+  .wrapper-takeadate__container{
+    max-width: 70rem;
+  }
+  .wrapper-takeadate__strong {
+    font-size: 4rem;
+  }
+
+  .myservices-card__container {
+    flex: 45%;
+  }
+  .services__container {
+    flex-direction: column;
+    gap: 3rem;
+    
+  }
+  .form__lil-input {
+    width: 100%;
+  }
+}
