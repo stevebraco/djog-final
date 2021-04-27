@@ -38,7 +38,7 @@ const data = {
       listOne: "Remise en forme générale",
       listTwo: "Perte de poids et prise de masse musculaire",
       listThree:
-        "• Réadaptation (maladie chronique, diabète, obésité, maladie cardio-vasculaire , arthrose ,trouble musculosquelettique...)",
+        "Réadaptation (maladie chronique, diabète, obésité, maladie cardio-vasculaire , arthrose ,trouble musculosquelettique...)",
     },
     {
       id: 2,
