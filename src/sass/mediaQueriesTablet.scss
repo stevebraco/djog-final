@@ -21,8 +21,10 @@
   .header {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .7);
   }
+
   
   
+
   img {
     width: 100%;
   }
@@ -112,9 +114,7 @@
   .wrapper-heading__title::after {
     top: 30px;
   }
-  .wrapper-takeadate__container{
-    max-width: 70rem;
-  }
+  
   .wrapper-takeadate__strong {
     font-size: 4rem;
   }
@@ -133,4 +133,5 @@
   .form__lil-input {
     width: 100%;
   }
+  
 }

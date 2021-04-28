@@ -105,6 +105,55 @@ button {
     background: $secondary;
   }
 }
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.btn-mobile {
+  position: fixed;
+  bottom: -100%;
+  right: 1%;
+  z-index: 1;
+  transition: 1s;
+  font-size: 1.3rem;
+  color: $white;
+  background: $primary;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  opacity: .4;
+  // transition: .3s;
+  &:hover {
+    opacity: 1;
+    animation: 1s linear alternate infinite slide-top;
+  }
+}
+
+
 
 // *** Wrapper ***
 .wrapper-heading {
@@ -144,8 +193,8 @@ button {
   color: $secondary;
 
   &__container {
-    max-width: 80rem;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__strong {
@@ -450,6 +499,7 @@ textarea {
 .form {
   width: 50%;
   margin: 0 auto;
+  position: relative
 
   &__wrapper {
     justify-content: space-between;
@@ -469,6 +519,25 @@ textarea {
   &__field.error, &__field-email.error {
     display: block;
   }
+}
+// ALERT
+.alert {
+  display: inline-block;
+  padding: 1rem;
+  width: 100%;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
 }
 
 // *** FOOTER ***

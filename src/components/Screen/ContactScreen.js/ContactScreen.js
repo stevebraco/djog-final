@@ -1,8 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import IconSocial from "../../IconSocial";
 import WrapperHeading from "../../WrapperHeading";
+import { validate, res } from "react-email-validator";
+import * as emailjs from "emailjs-com";
+import MessageBox from "../../MessageBox";
+require('dotenv').config()
+
+
+
 
 export default function ContactScreen() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
+
+  const sendMail = () => {
+
+    if (
+      name === "" ||
+      lastName === "" ||
+      email === "" ||
+      subject === "" ||
+      message === ""
+    ) {
+      console.log("erreur true");
+      setError(true);
+    } else {
+      validate(email);
+      if (!res) {
+        setErrorEmail(true)
+        console.log("erreur true email");
+      setError(true);
+      } else {
+        setErrorEmail(false)
+        console.log("pas d'erreur false");
+        const template_params = {
+          name: name,
+          email: email,
+          lastname: lastName,
+          subject: subject,
+          message: message,
+        };
+
+        const service_id = "Gmail";
+        const template_id = process.env.REACT_APP_TEMPLATE;
+        emailjs
+          .send(
+            service_id,
+            template_id,
+            template_params,
+            process.env.REACT_APP_USER_ID
+          )
+          .then(
+            function (response) {
+              alert("Votre message a bien été envoyé");
+            },
+            function (err) {
+              console.log("FAILED...", err);
+            }
+          );
+        setName("");
+        setLastName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    }
+  };
   return (
     <>
       <section className="section contact ">
@@ -32,11 +100,15 @@ export default function ContactScreen() {
           </div>
           <div className="form">
             <div className="form__wrapper dp-flex">
+
+            {error ? <MessageBox variant='success'>Votre message a bien été envoyé.</MessageBox> :<MessageBox variant='danger'>Les Champs sont obligatoires.</MessageBox>   }
               <div className="form__lil-input">
                 <input
                   type="text"
                   name="name"
                   placeholder="Prénom *"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
@@ -46,21 +118,31 @@ export default function ContactScreen() {
                   type="text"
                   name="lastname"
                   placeholder="Nom *"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                   required
                 />
               </div>
             </div>
             <div className="form__group">
-              <span className="form__field-email">
-                L'adresse email n'est pas valide
-              </span>
-              <input type="text" name="email" placeholder="Email *" required />
+              
+              {errorEmail && <MessageBox variant='danger'> L'adresse email n'est pas valide</MessageBox> }
+              <input
+                type="text"
+                name="email"
+                placeholder="Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
 
             <div className="form__group">
               <input
                 type="text"
                 name="subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
                 placeholder="Sujet *"
                 required
               />
@@ -70,11 +152,13 @@ export default function ContactScreen() {
               <textarea
                 name="message"
                 placeholder="Comment puis-je vous aider ? *"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>
-            <span className="form__field">Les Champs sont obligatoires.</span>
-            <button type="submit">ENVOYER</button>
+
+            <button type="submit" onClick={sendMail}>ENVOYER</button>
           </div>
         </div>
       </section>

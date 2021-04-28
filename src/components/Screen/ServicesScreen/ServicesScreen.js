@@ -9,7 +9,7 @@ export default function ServicesScreen() {
             <WrapperHeading title='Mes Services' >
             Selon vos besoins et vos envies, vous pouvez profiter de différents types de prestations.
             </WrapperHeading>
-            <div className="services__container dp-flex">
+            <div className="services__container dp-flex" id='masso'>
                 <h3 className='services__heading'>Massothérapie</h3>
                 {
                     data.masso.map(item => (
@@ -17,7 +17,7 @@ export default function ServicesScreen() {
                     ))
                 }
             </div>
-            <div className="services__container dp-flex">
+            <div className="services__container dp-flex" id='kine'>
             <h3 className='services__heading'>Kinésiologie</h3>
 
                 {
@@ -26,12 +26,12 @@ export default function ServicesScreen() {
                     ))
                 }
             </div>
-            <div className="services__container   ">
+            <div className="services__container" id='massage-sportif'>
             <h3 className='services__heading'>Massage Sportif</h3>
             <p className='services__loading'>En formation arrive en octobre 2021</p>
             </div>
 
-            <div className="services__container  ">
+            <div className="services__container" id='therapiesport'>
             <h3 className='services__heading'>Thérapie du Sport</h3>
             <p className='services__loading'>A venir</p>
             </div>

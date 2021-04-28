@@ -54,4 +54,10 @@
 .contact__info, .form {
     width: 95%;
 }
+.scroll-top.active {
+  display: none;
+}
+.btn-mobile.active {
+  bottom: 2%;
+}
 }
