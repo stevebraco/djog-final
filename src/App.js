@@ -5,7 +5,7 @@ import ServicesScreen from "./components/Screen/ServicesScreen/ServicesScreen";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutMeScreen from "./components/Screen/AboutMeScreen/AboutMeScreen";
-import ContactScreen from "./components/Screen/ContactScreen.js/ContactScreen";
+import ContactScreen from "./components/Screen/ContactScreen/ContactScreen";
 
 function App() {
   return (

@@ -17,6 +17,8 @@ export default function ContactScreen() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
+  const [success, setSuccess] = useState(false);
+
 
   const sendMail = () => {
 
@@ -29,15 +31,16 @@ export default function ContactScreen() {
     ) {
       console.log("erreur true");
       setError(true);
+      setSuccess(false);
     } else {
       validate(email);
       if (!res) {
         setErrorEmail(true)
-        console.log("erreur true email");
       setError(true);
       } else {
+      setError(false);
         setErrorEmail(false)
-        console.log("pas d'erreur false");
+        setSuccess(true);
         const template_params = {
           name: name,
           email: email,
@@ -101,7 +104,8 @@ export default function ContactScreen() {
           <div className="form">
             <div className="form__wrapper dp-flex">
 
-            {error ? <MessageBox variant='success'>Votre message a bien été envoyé.</MessageBox> :<MessageBox variant='danger'>Les Champs sont obligatoires.</MessageBox>   }
+            {error && <MessageBox variant='danger'>Les Champs sont obligatoires.</MessageBox>}
+            {success && <MessageBox variant='success'>Votre message a bien été envoyé.</MessageBox>}
               <div className="form__lil-input">
                 <input
                   type="text"

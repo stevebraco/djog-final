@@ -4,7 +4,7 @@ import WrapperHeading from "../../WrapperHeading";
 export default function AboutMeScreen() {
   return (
     <section className="section about container">
-      <WrapperHeading title="A Propos" />
+      <WrapperHeading title="À Propos" />
 
       <div className="about__profil dp-flex align-c">
         <figure className="about__figure">

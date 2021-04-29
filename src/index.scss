@@ -1,11 +1,11 @@
 @import "./sass/reset.scss";
 @import "./sass/variable.scss";
+@import "./sass/mixin.scss";
 
 body {
   font-family: $fonts;
   font-size: 1.8rem;
 }
-
 
 a {
   text-decoration: none;
@@ -28,7 +28,7 @@ h3 {
 }
 h4 {
   font-size: 3rem;
-} 
+}
 strong {
   font-weight: 400;
 }
@@ -43,10 +43,10 @@ button {
   padding: 1.5rem 2rem;
   cursor: pointer;
   width: 100%;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
   margin-top: 1rem;
-  transition: .5s;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+  @include transition(.5s);
 
   &:hover {
     background: $colorEffect;
@@ -68,16 +68,14 @@ button {
   bottom: -100%;
   right: 1%;
   z-index: 1;
-  transition: 1s;
   font-size: 2.5rem;
   color: $white;
   background: $primary;
   padding: 0.5rem 0.3rem 0rem;
   border-radius: 0.5rem;
+  @include transition(1s);
+  bottom: 2%;
 
-  &.active {
-    bottom: 2%;
-  }
 }
 
 // *** FLEXBOX ***
@@ -99,7 +97,7 @@ button {
   background: $primary;
   border-radius: 0.5rem;
   color: $white;
-  transition: 0.5s;
+  @include transition(.5s);
 
   &:hover {
     background: $secondary;
@@ -108,29 +106,29 @@ button {
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes slide-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -139,21 +137,19 @@ button {
   bottom: -100%;
   right: 1%;
   z-index: 1;
-  transition: 1s;
+  @include transition(1s);
   font-size: 1.3rem;
   color: $white;
   background: $primary;
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
-  opacity: .4;
-  // transition: .3s;
+  opacity: 0.4;
   &:hover {
     opacity: 1;
-    animation: 1s linear alternate infinite slide-top;
-  }
+    animation: 1s linear alternate infinite slide-top;  ;
+    -webkit-animation: 1s linear alternate infinite slide-top;
 }
-
-
+}
 
 // *** Wrapper ***
 .wrapper-heading {
@@ -210,7 +206,7 @@ button {
   &__icon-footer {
     color: $white;
     margin: 0 1rem;
-    transition: 0.5s;
+    @include transition(.5s);
 
     &:hover {
       color: $secondary;
@@ -220,7 +216,7 @@ button {
   &__icon-info {
     color: $primary;
     margin: 0 1rem;
-    transition: 0.5s;
+    @include transition(.5s);
     &:hover {
       color: $secondary;
     }
@@ -236,7 +232,7 @@ button {
     color: $secondary;
     margin: 0 2rem;
     letter-spacing: 0.5px;
-    transition: 0.5s;
+    @include transition(.5s);
 
     &:hover {
       color: $primary;
@@ -253,8 +249,7 @@ button {
   position: relative;
 
   &__background {
-    background: 
-      url("./images/homebackground.png") no-repeat;
+    background: url("./images/homebackground.png") no-repeat;
     background-size: cover;
     background-position: center bottom;
     padding-left: 5rem;
@@ -278,12 +273,10 @@ button {
 .myservices-card {
   &__container {
     flex: 1 1;
-    
   }
 
   &__img {
-    object-fit: cover;
-
+    object-fit: contain;
   }
 
   &__heading {
@@ -305,9 +298,10 @@ button {
   }
 
   &__arrow {
-    transition: 0.5s;
     vertical-align: middle;
-  }
+    @include transition(.5s);
+    
+}
 }
 
 //*** SERVICES SCREEN ***
@@ -329,24 +323,19 @@ button {
   }
 }
 .masso-one {
-  background: 
-    url("./images/massotherapie.jpg") no-repeat;
+  background: url("./images/massotherapie.jpg") no-repeat;
 }
 .masso-two {
-  background:
-    url("./images/massotherapie2.jpg") no-repeat;
+  background: url("./images/massotherapie2.jpg") no-repeat;
 }
 .kine-one {
-  background: 
-    url("./images/kinesiologie.jpg") no-repeat;
+  background: url("./images/kinesiologie.jpg") no-repeat;
 }
 .kine-two {
-  background: 
-    url("./images/kinesiologie3.jpg") no-repeat;
+  background: url("./images/kinesiologie3.jpg") no-repeat;
 }
 .kine-three {
-  background: 
-    url("./images/kinesiologie2.jpg") no-repeat;
+  background: url("./images/kinesiologie2.jpg") no-repeat;
 }
 .icon-check {
   color: $colorEffect;
@@ -361,7 +350,7 @@ button {
   padding: 3rem;
   border-radius: 1rem;
   color: $white;
-  transition: 0.5s;
+  @include transition(.5s);
   background-size: cover;
   background-position: center;
 
@@ -397,7 +386,6 @@ button {
 
 //*** ABOUT ME ***
 .about {
-
   &__profil {
     justify-content: space-evenly;
     padding-bottom: 2rem;
@@ -427,9 +415,9 @@ button {
   &__link {
     color: $primary;
     border-bottom: 1px solid $primary;
-    transition: 0.5s;
+    @include transition(.5s);
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
@@ -457,7 +445,7 @@ button {
     letter-spacing: 1px;
     font-weight: 400;
   }
- 
+
   &__email-phone {
     font-weight: 700;
     text-transform: uppercase;
@@ -473,7 +461,6 @@ button {
 .contact__container {
   background: $background;
   padding: 8rem 0;
-
 }
 iframe {
   width: 100%;
@@ -482,7 +469,8 @@ iframe {
 input {
   margin-bottom: 2rem;
 }
-input, textarea {
+input,
+textarea {
   border: none;
   border: 0.2rem #dfe0e2 solid;
   border-radius: 3px;
@@ -499,9 +487,8 @@ textarea {
 .form {
   width: 50%;
   margin: 0 auto;
-  position: relative
-
-  &__wrapper {
+  position: relative;
+   &__wrapper {
     justify-content: space-between;
   }
 
@@ -509,14 +496,16 @@ textarea {
     width: 49%;
   }
 
-  &__field, &__field-email {
+  &__field,
+  &__field-email {
     display: none;
     font-style: italic;
     color: #f54242;
     text-align: left;
   }
 
-  &__field.error, &__field-email.error {
+  &__field.error,
+  &__field-email.error {
     display: block;
   }
 }
@@ -528,7 +517,7 @@ textarea {
   border: 0.1rem solid transparent;
   border-radius: 0.5rem;
   font-size: 1.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .alert-danger {

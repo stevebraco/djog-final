@@ -21,9 +21,9 @@ export default function Navbar() {
   window.addEventListener("scroll", changeBackground);
 
   return (
-    <>
+    <div id='header'>
       {/* SCROLL */}
-      <a href="#" className={scrollTop ? "scroll-top active" : "scroll-top"}>
+      <a href="#header" className={scrollTop ? "scroll-top active" : "scroll-top"}>
         <HiArrowNarrowUp />
       </a>
       {/* SCROLL BUTTON */}
@@ -62,7 +62,7 @@ export default function Navbar() {
               className="navbar__link"
               onClick={closeMobileMenu}
             >
-              A propos
+              À propos
             </Link>
             <Link
               to="/contact"
@@ -84,6 +84,6 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-    </>
+    </div>
   );
 }
