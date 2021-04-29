@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutMeScreen from "./components/Screen/AboutMeScreen/AboutMeScreen";
 import ContactScreen from "./components/Screen/ContactScreen/ContactScreen";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/services'  component={ServicesScreen} />
         <Route path='/about'  component={AboutMeScreen} />
         <Route path='/contact'  component={ContactScreen} />
+        <Route component={NotFound}/>
       </Switch>
       <Footer/>
     </Router>

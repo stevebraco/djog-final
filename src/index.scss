@@ -559,5 +559,10 @@ textarea {
   }
 }
 
+.not-found {
+  text-align: center;
+  padding: 3rem 0;
+}
+
 @import "./sass/mediaQueriesTablet.scss";
 @import "./sass/mediaQueriesPhone.scss";
